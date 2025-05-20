@@ -201,7 +201,7 @@ def _emit_ini_file_action(ctx, platformio_ini):
   lib_deps.extend(ctx.attr.lib_deps)
   for dep in ctx.attr.deps:
     lib_deps.extend(dep[PlatformIOLibraryInfo].transitive_libdeps)
-  substitutions = struct(
+  substitutions = json.encode(struct(
     board=ctx.attr.board,
     platform=ctx.attr.platform,
     framework=ctx.attr.framework,
@@ -211,7 +211,7 @@ def _emit_ini_file_action(ctx, platformio_ini):
     port=ctx.attr.port,
     lib_ldf_mode=ctx.attr.lib_ldf_mode,
     lib_deps=lib_deps,
-  ).to_json()
+  ))
   ctx.actions.run(
     outputs=[platformio_ini],
     inputs=[ctx.file._platformio_ini_tmpl],
@@ -360,7 +360,7 @@ def _emit_upload_fs_ini_file_action(ctx, platformio_ini):
     ctx: The Starlark context.
     platformio_ini: Declared output for the platformio.ini file.
   """
-  substitutions = struct(
+  substitutions = json.encode(struct(
     board=ctx.attr.board,
     platform=ctx.attr.platform,
     framework=ctx.attr.framework,
@@ -370,7 +370,7 @@ def _emit_upload_fs_ini_file_action(ctx, platformio_ini):
     port=ctx.attr.port,
     lib_ldf_mode="deep+",
     lib_deps=[],
-  ).to_json()
+  ))
   ctx.actions.run(
     outputs=[platformio_ini],
     inputs=[ctx.file._platformio_ini_tmpl],
