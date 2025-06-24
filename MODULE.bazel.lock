@@ -211,10 +211,10 @@
     },
     "@@rules_python+//python/extensions:pip.bzl%pip": {
       "general": {
-        "bzlTransitiveDigest": "p8RKtFKw+vhlqeZpq3OBq5XR+5sPHJj9Fwj8MB6xRoQ=",
+        "bzlTransitiveDigest": "FJE++l1bHec8J6dAhS5JbiaW9mWdA1v7Zin4HI/d32I=",
         "usagesDigest": "rIY1c8eroMH+172ujriRz1WqCorUmV27dJUN/VsW4iA=",
         "recordedFileInputs": {
-          "@@//requirements_lock.txt": "3ad5399bc38aa83338752edc05d4a7332023586eb0fe1735e3dfb615b1f7f1d3",
+          "@@//requirements_lock.txt": "88cc1b76d3cf338a1a30cba97678ee1acde0cc8ec5a928b198dd704391f48bc4",
           "@@protobuf+//python/requirements.txt": "983be60d3cec4b319dcab6d48aeb3f5b2f7c3350f26b3a9e97486c37967c73c5",
           "@@rules_fuzzing+//fuzzing/requirements.txt": "ab04664be026b632a0d2a2446c4f65982b7654f5b6851d2f9d399a19b7242a5b",
           "@@rules_python+//tools/publish/requirements_darwin.txt": "095d4a4f3d639dce831cd493367631cd51b53665292ab20194bac2c0c6458fa8",
